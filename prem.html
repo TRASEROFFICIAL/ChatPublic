@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium Verification</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, sans-serif; }
+        body { background: #0d1117; color: white; display: flex; align-items: center; justify-content: center; height: 100vh; flex-direction: column; }
+        input, button { padding: 10px; border: none; border-radius: 5px; margin: 5px; }
+        button { background: #25d366; cursor: pointer; }
+    </style>
+</head>
+<body>
+
+    <h2>Masukkan Kode Premium</h2>
+    <input type="text" id="premiumCodeInput" placeholder="Kode rahasia..." />
+    <button onclick="verifyPremium()">Verifikasi</button>
+    <br>
+    <button onclick="window.location.href='index.html'">Kembali</button>
+
+    <script>
+        function verifyPremium() {
+            const premiumCode = "META2025";
+            let codeInput = document.getElementById("premiumCodeInput").value;
+
+            if (codeInput === premiumCode) {
+                localStorage.setItem("isPremium", "true");
+                alert("Verifikasi sukses! Kamu sekarang Premium.");
+                window.location.href = "index.html";
+            } else {
+                alert("Kode salah! Coba lagi.");
+            }
+        }
+    </script>
+
+</body>
+</html>
